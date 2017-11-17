@@ -4,6 +4,7 @@ var express = require('express');
 var path = require('path');
 var fs = require('fs');
 var app = express();
+var port = process.env.PORT || 3000;
 
 app.get('/', function(req, res, next){
     fs.readFile('index.html', function(err,data){
@@ -14,6 +15,6 @@ app.get('/', function(req, res, next){
     });
 });
 
-app.listen(8000, function () {
-    console.log("== Server listening on port 8000");
+app.listen(port, function () {
+    console.log("== Server listening on port", port);
 });
