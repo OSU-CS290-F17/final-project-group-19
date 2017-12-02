@@ -1,20 +1,3 @@
-<<<<<<< HEAD
-//Not functional yet
-
-var express = require('express');
-var path = require('path');
-var fs = require('fs');
-var app = express();
-var port = process.env.PORT || 3000;
-
-app.get('/', function(req, res, next){
-    fs.readFile('index.html', function(err,data){
-        if (err){throw err;}
-        else {
-            res.status(200).send(data);
-        }
-    });
-=======
 //Now fully functional with Handlebars
 
 var express = require('express');
@@ -42,7 +25,6 @@ app.get('/', function(req, res, next){
 
 app.get('*', function(req, res) {
 	res.status(404).sendFile(path.join(__dirname,'public','404.txt'));
->>>>>>> server
 });
 
 app.listen(port, function () {
