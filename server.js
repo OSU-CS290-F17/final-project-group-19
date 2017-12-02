@@ -15,8 +15,12 @@ app.set('view engine', 'handlebars');
 //Code that actually listens and responds now:
 
 app.get('/', function(req, res, next){
-	//res.status(200).sendFile(path.join(__dirname,'public','index.html'));
-	res.status(200).render('mainPage', {loggedIn: 0});
+	if (process.env.CS_HBS) {
+		res.status(200).render('mainPage', {loggedIn: 0});
+	}
+	else {
+		res.status(200).sendFile(path.join(__dirname,'public','index.html'));
+	}
 });
 
 app.get('*', function(req, res) {
