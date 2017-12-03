@@ -8,8 +8,14 @@ var fs = require('fs');
 //Setting up our working environment cont.
 var app = express();
 var port = process.env.PORT || 3000;
+
+//local .json character data for testing
+var characterData = require('./characterData.json');
+
 app.use(express.static('public'));
-app.engine('handlebars', exphbs());
+
+// Change (chris): added the main.hbs as a default layout
+app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
 //Code that actually listens and responds now:
