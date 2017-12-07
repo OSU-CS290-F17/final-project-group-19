@@ -43,7 +43,6 @@ header {
 	margin: 12px;
 	border-radius: 12px;
 	min-width: 20vw;
-	display: flex;
 }
 
 .main-container {
@@ -53,8 +52,8 @@ header {
 	margin-top: 12px;
 	border-radius: 12px;
 	min-width: 40vw;
-	max-width: 80vw;
-	display: flex;
+	max-width: 60vw;
+	display: block;
 }
 
 #login {
