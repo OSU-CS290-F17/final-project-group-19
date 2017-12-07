@@ -11,6 +11,8 @@ var port = process.env.PORT || 3000;
 
 //local .json character data for testing
 var characterData = require('./characterData.json');
+//local .json news data for testing
+var newsData = require('./newsData.json');
 
 app.use(express.static('public'));
 
@@ -22,7 +24,7 @@ app.set('view engine', 'handlebars');
 
 app.get('/', function(req, res, next){
 	if (process.env.CS_HBS || 1) {
-		res.status(200).render('mainPage', {loggedIn: 0});
+		res.status(200).render('mainPage', {loggedIn: 0, newsData: newsData});
 	}
 	else {
 		res.status(200).sendFile(path.join(__dirname,'public','index.html'));

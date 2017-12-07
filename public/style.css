@@ -3,6 +3,10 @@ body {
 	background-color:gray;
 }
 
+section {
+	margin: auto;
+}
+
 .header-image-container {
 	position: absolute;
 	left: 12px;
@@ -38,33 +42,42 @@ header {
 }
 
 .side-container {
+	display: block;
 	background-color:white;
 	padding: 12px;
 	margin: 12px;
 	border-radius: 12px;
+	max-width: 200px;
 	min-width: 20vw;
 }
 
 .main-container {
 	background-color:white;
 	padding: 12px;
-	margin-right: auto;
+	margin: auto;
 	margin-top: 12px;
-	border-radius: 12px;
+	border-radius: 6px;
 	min-width: 40vw;
-	max-width: 60vw;
+	max-width: 750px;
 	display: block;
+	height: 85vh;
 }
 
 iframe {
 	margin: auto;
+	display: flex;
 }
 
 #login {
 	display: inline-block;
 	position: absolute;
-	right: 12px;
+	right: 6vw;
 	top: 24px;
+	background-color: gray;
+	border: none;
+	color: white;
+	padding: 12px 24px;
+	text-decoration: none;
 }
 
 .fa fa-plus {
@@ -144,4 +157,8 @@ iframe {
 
 .action-button {
 
+}
+
+.news-card-title {
+	font-weight: bold;
 }

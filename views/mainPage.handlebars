@@ -4,13 +4,9 @@
 			<h1>News</h1>
 		</div>
 		<section>
-			<div class="news-card-container" card-title="Test News" card-date="11/23/17">
-				<div class="news-card-title">Test News</div>
-				<div class="news-card-date">11/23/17</div>
-				<div class="news-card-content">
-					This should really be filled with lorem ipsum text right now.
-				</div>
-			</div>
+			{{#each newsData}}
+				{{> newsCard this}}
+			{{/each}}
 		</section>
 	</aside>
 	<section>
