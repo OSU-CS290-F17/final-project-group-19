@@ -4,11 +4,14 @@ body {
 }
 
 .header-image-container {
-
+	position: absolute;
+	left: 12px;
+	top: 50%;
 }
 
 .site-title {
-	display: inline-block;
+	display: flex;
+	top: 50%;
 }
 
 .site-title a {
@@ -44,18 +47,21 @@ header {
 }
 
 .main-container {
-	position: relative;
 	background-color:white;
 	padding: 12px;
+	margin-right: auto;
 	margin-top: 12px;
 	border-radius: 12px;
-	min-width: 60vw;
+	min-width: 40vw;
 	max-width: 80vw;
 	display: flex;
 }
 
 #login {
 	display: inline-block;
+	position: absolute;
+	right: 12px;
+	top: 24px;
 }
 
 .fa fa-plus {
