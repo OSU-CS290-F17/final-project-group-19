@@ -179,3 +179,15 @@ button {
 .news-card-title {
 	font-weight: bold;
 }
+
+#notFound {
+
+	color: white;
+	font-size: xx-large;
+	font-weight: bolder;
+	position: absolute;
+	left: 50%;
+	bottom: 50%;
+	transform: translate(-50%,-50%);
+
+}

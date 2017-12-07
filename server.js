@@ -32,7 +32,7 @@ app.get('/', function(req, res, next){
 });
 
 app.get('*', function(req, res) {
-	res.status(404).sendFile(path.join(__dirname,'public','404.txt'));
+	res.status(404).render('404',{loggedIn: 404});
 });
 
 app.listen(port, function () {
