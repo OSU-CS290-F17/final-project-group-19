@@ -6,6 +6,11 @@ function showLoginModal() {
 	loginModal.classList.remove('hidden');
 }
 
+function clearInputs() {
+	document.getElementById('login-text-input').value = "";
+	document.getElementById('login-password-input').value = "";
+}
+
 function hideLoginModal() {
 	var modalBackdrop = document.getElementById('modal-backdrop');
 	var loginModal = document.getElementById('login-modal');
@@ -13,6 +18,7 @@ function hideLoginModal() {
 	modalBackdrop.classList.add('hidden');
 	loginModal.classList.add('hidden');
 
+	clearInputs();
 }
 
 var loginButton = document.getElementById('login');
@@ -23,4 +29,9 @@ if (loginButton) {
 var loginHide = document.getElementById('modal-close');
 if (loginHide) {
 		loginHide.addEventListener('click',hideLoginModal);
+}
+
+var loginCancel = document.getElementById('modal-cancel');
+if (loginCancel) {
+		loginCancel.addEventListener('click',hideLoginModal);
 }

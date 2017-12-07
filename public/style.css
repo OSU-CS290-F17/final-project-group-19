@@ -16,14 +16,14 @@ section {
 .site-title {
 	display: flex;
 	top: 50%;
+	margin: auto;
 }
 
 .site-title a {
-	display: flex;
 	color: white;
 	text-decoration: none;
 	margin: auto;
-	margin-top: 0px;
+	margin-top: 13px;
 }
 
 header {
@@ -32,6 +32,7 @@ header {
 	padding: 0px 5px;
 	width: 100%;
 	border: 0px;
+	height: 72px;
 }
 
 .content {
@@ -46,9 +47,11 @@ header {
 	background-color:white;
 	padding: 12px;
 	margin: 12px;
-	border-radius: 12px;
+	border-radius: 6px;
 	max-width: 200px;
 	min-width: 20vw;
+	max-height: 85vh;
+	overflow-y:auto;
 }
 
 .main-container {
@@ -68,16 +71,20 @@ iframe {
 	display: flex;
 }
 
-#login {
-	display: inline-block;
-	position: absolute;
-	right: 6vw;
-	top: 24px;
+button {
 	background-color: gray;
 	border: none;
 	color: white;
 	padding: 12px 24px;
 	text-decoration: none;
+
+}
+
+#login {
+	display: inline-block;
+	position: absolute;
+	right: 6vw;
+	top: 16px;
 }
 
 .fa fa-plus {
@@ -124,7 +131,8 @@ iframe {
 #modal-close {
 	display:flex;
 	position: absolute;
-	right: 12px;
+	right: 12px;	
+	padding: 3px 6px;
 }
 
 .modal-hide-button {
@@ -136,23 +144,32 @@ iframe {
 }
 
 .login-input-element {
-
+	margin-top: 12px;
 }
 
-#login-text-input {
+.login-input-element label {
+	position: relative;
+	left: 23px;
+}
 
+.login-input-element input {
+	position: absolute;
+	right: 72px;
 }
 
 .modal-footer {
-
+	position: absolute;
+	bottom: 24px;
+	display: flex;
+	width: 94%;
 }
 
 #modal-cancel {
-
+	margin: auto;
 }
 
 #modal-accept {
-
+	margin: auto;
 }
 
 .action-button {
