@@ -180,6 +180,10 @@ button {
 	font-weight: bold;
 }
 
+.news-card-container {
+	margin: 6px;
+}
+
 #notFound {
 
 	color: white;
