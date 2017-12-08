@@ -1,3 +1,4 @@
+
 function showLoginModal() {
 	var modalBackdrop = document.getElementById('modal-backdrop');
 	var loginModal = document.getElementById('login-modal');
@@ -34,6 +35,23 @@ if (loginHide) {
 var loginCancel = document.getElementById('modal-cancel');
 if (loginCancel) {
 		loginCancel.addEventListener('click',hideLoginModal);
+}
+
+var loginAccept = document.getElementById('modal-accept');
+if (loginAccept) {
+    loginAccept.addEventListener('click', function() {
+        var username = document.getElementById('login-text-input').value;
+        var password = document.getElementById('login-password-input').value;
+        var test = false;
+
+        if (username && password) {
+            window.location.replace('/' + username +'/' + password);
+            hideLoginModal();
+        }
+        else {
+            alert("You must fill out all fields");
+        }
+    });
 }
 
 // **************Character roster stuff goes here*******************
