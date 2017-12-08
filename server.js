@@ -94,6 +94,18 @@ app.post('/:username/:password', function (req, res, next) {
 	}
 });
 
+// app.post('/:username/addCharacter', function(req, res, next){
+//     if(req.body && req.body.name){
+//         console.log("==client added the character" + req.body.name);
+
+//         res.status(200).send("Character succesfuly added");
+//     }
+//     else {
+//         res.status(400).send("Requests to this path must " +
+//                              "contain a JSON body with a name field");
+//     }
+// });
+
 app.post('*', function(req, res) {
 	res.status(404).send("POST to unknown path");
 });

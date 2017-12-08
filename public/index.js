@@ -55,76 +55,113 @@ if (loginAccept) {
 }
 
 // **************Character roster stuff goes here*******************
-function insertNewCharacter(name) {
-    var characterTempletArgs = {
-        name: name
-    };
+// function insertNewCharacter(name) {
+//     var characterTempletArgs = {
+//         name: name
+//     };
 
-    var characterButtonHTML = Handlebars.templates.newCharacterButton(characterTempletArgs);
+//     var characterButtonHTML = Handlebars.templates.newCharacterButton(characterTempletArgs);
+//     var characterButtonContainer = document.getElementById('character-button-container');
+
+//     characterButtonContainer.insertAdjacentHTML('beforeend', characterButtonHTML);
+// }
+
+function insertNewCharacter(characerObj) {
+    var characterButtonHTML = Handlebars.templates.newCharacterButton(characerObj);
     var characterButtonContainer = document.getElementById('character-button-container');
 
     characterButtonContainer.insertAdjacentHTML('beforeend', characterButtonHTML);
 }
 
-function insertCharacterSheet (name) {
-    var characterSheetTemplateArgs = {
-        name: name,
-        classtype: "",
-        experience: "",
-        race: "",
-        strength: "",
-        dexterity: "",
-        constitution: "",
-        intelegence: "",
-        charisma: "",
-        strengthMod: "",
-        dexterityMod: "",
-        constitutionMod: "",
-        intelegenceMod: "",
-        wisdomMod: "",
-        charismaMod: "",
-        strengthSave: "",
-        dexteritySave: "",
-        constitutionSave: "",
-        intelegenceSave: "",
-        wisdomSave: "",
-        charismaSave: ""
-    };
+function handleNewCharacter(characterName) {
+    var postRequest = new XMLHttpRequest();
+    var postURL = "/gamer/addCharacter";
+    postRequest.open('POST', postURL);
 
-    var characterSheetHTML = Handlebars.templates.post(characterSheetTemplateArgs);
-    var characterSheetContainer = document.getElementById('characterSheetContainer');
-    postContainer.insertAdjacentHTML('beforeend', characterSheetHTML);
+    var  newCharacter= {
+        name: characterName
+    };
+    var requestBody = JSON.stringify(newCharacter);
+    postRequest.setRequestHeader('Content-Type', 'application/json');
+
+    postRequest.addEventListener('load', function (event) {
+        if (event.target.status !== 200) {
+            alert("Error storing character in database:\n\n\n" + event.target.response);
+        } else {
+            insertNewCharacter(newCharacter);
+            insertCharacterSheet(newCharacter);
+        }
+    });
+
+    postRequest.send(requestBody);
+    hideNewCharacterModal();
 }
 
-function insertCharacterSheet (name, classtype, experience, race, strength, dexterity, constitution, intelegence, wisdom, charisma, strengthMod, dexterityMod, constitutionMod, intelegenceMod, wisdomMod, charismaMod, strengthSave, dexteritySave, constitutionSave, intelegenceSave, wisdomSave, charismaSave) {
-    var characterSheetTemplateArgs = {
-        name: name,
-        classtype: classtype,
-        experience: experience,
-        race: race,
-        strength: strength,
-        dexterity: dexterity,
-        constitution: constitution,
-        intelegence: intelegence,
-        charisma: charisma,
-        strengthMod: strengthMod,
-        dexterityMod: dexterityMod,
-        constitutionMod: constitutionMod,
-        intelegenceMod: intelegenceMod,
-        wisdomMod: wisdomMod,
-        charismaMod: charismaMod,
-        strengthSave: strengthSave,
-        dexteritySave: dexteritySave,
-        constitutionSave: constitutionSave,
-        intelegenceSave: intelegenceSave,
-        wisdomSave: wisdomSave,
-        charismaSave: charismaSave
-    };
-
-    var characterSheetHTML = Handlebars.templates.post(characterSheetTemplateArgs);
-    var characterSheetContainer = document.getElementById('characterSheetContainer');
-    postContainer.insertAdjacentHTML('beforeend', characterSheetHTML);
+function insertCharacterSheet (characterObj) {
+    var characterSheetHTML = Handlebars.templates.characterSheet(characterObj);
+    var characterSheetContainer = document.getElementById('character-container');
+    characterSheetContainer.insertAdjacentHTML('beforeend', characterSheetHTML);
 }
+
+// function insertCharacterSheet (name) {
+//     var characterSheetTemplateArgs = {
+//         name: name,
+//         classtype: "",
+//         experience: "",
+//         race: "",
+//         strength: "",
+//         dexterity: "",
+//         constitution: "",
+//         intelegence: "",
+//         charisma: "",
+//         strengthMod: "",
+//         dexterityMod: "",
+//         constitutionMod: "",
+//         intelegenceMod: "",
+//         wisdomMod: "",
+//         charismaMod: "",
+//         strengthSave: "",
+//         dexteritySave: "",
+//         constitutionSave: "",
+//         intelegenceSave: "",
+//         wisdomSave: "",
+//         charismaSave: ""
+//     };
+
+//     var characterSheetHTML = Handlebars.templates.post(characterSheetTemplateArgs);
+//     var characterSheetContainer = document.getElementById('characterSheetContainer');
+//     postContainer.insertAdjacentHTML('beforeend', characterSheetHTML);
+// }
+
+// function insertCharacterSheet (name, classtype, experience, race, strength, dexterity, constitution, intelegence, wisdom, charisma, strengthMod, dexterityMod, constitutionMod, intelegenceMod, wisdomMod, charismaMod, strengthSave, dexteritySave, constitutionSave, intelegenceSave, wisdomSave, charismaSave) {
+//     var characterSheetTemplateArgs = {
+//         name: name,
+//         classtype: classtype,
+//         experience: experience,
+//         race: race,
+//         strength: strength,
+//         dexterity: dexterity,
+//         constitution: constitution,
+//         intelegence: intelegence,
+//         charisma: charisma,
+//         strengthMod: strengthMod,
+//         dexterityMod: dexterityMod,
+//         constitutionMod: constitutionMod,
+//         intelegenceMod: intelegenceMod,
+//         wisdomMod: wisdomMod,
+//         charismaMod: charismaMod,
+//         strengthSave: strengthSave,
+//         dexteritySave: dexteritySave,
+//         constitutionSave: constitutionSave,
+//         intelegenceSave: intelegenceSave,
+//         wisdomSave: wisdomSave,
+//         charismaSave: charismaSave
+//     };
+
+//     var characterSheetHTML = Handlebars.templates.post(characterSheetTemplateArgs);
+//     var characterSheetContainer = document.getElementById('characterSheetContainer');
+//     postContainer.insertAdjacentHTML('beforeend', characterSheetHTML);
+// }
 
 function removeCharacterSheet() {
     var characterContainer = document.getElementById('character-container');
@@ -178,7 +215,7 @@ newCharacterAcceptButton.addEventListener('click', function() {
         alert("You must give a name");
     }
     else {
-        insertNewCharacter(characterName);
+        handleNewCharacter(characterName);
         hideNewCharacterModal();
     }
 });
