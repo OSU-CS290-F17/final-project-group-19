@@ -64,6 +64,12 @@ app.get('*', function (req, res) {
     res.status(404).render('404');
 });
 
+app.post('/gamer/getCharacter', function (req, res, next) {
+	if (req.body) {
+		var name = req.body.name;
+	}
+});
+
 app.post('/:username/:password', function (req, res, next) {
 	if (req.body) {
 		var charCollection = mongoDBDatabase.collection('characterData');
@@ -79,9 +85,23 @@ app.post('/:username/:password', function (req, res, next) {
 			"charisma": req.body.charisma,
 		};
 
+		actualChar = 0;
+
+		charCollection.find({"name":req.body.name}).toArray(function (err, results) {
+			if (err) {
+				res.status(500).send("Data bad");
+			} else if (results.length > 0) {
+				res.status(200).send("nice");
+				actualChar = 1;
+			} else {
+				next();
+			}
+		});
+
+
 		if (0) {
 		charCollection.updateOne(
-		
+			{name: newChar.name},		
 			{$push: newChar },
 			function (err, result) {
 				if (err) {
@@ -93,8 +113,14 @@ app.post('/:username/:password', function (req, res, next) {
 		);
 		}
 		else {
-			charCollection.insert(newChar);
-			res.status(200).send("Success!");
+			charCollection.insert(newChar, function (err,result) {
+					if (err) {
+						res.status(500).send("Error fetching data");
+					}
+					else {
+						res.status(200).send("Success!");
+					}
+			});
 		}
 	} else {
 		res.status(400).send("Request needs some more info or is broken, I don't know");
