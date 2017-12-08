@@ -67,15 +67,15 @@ app.post('/:username/:password', function (req, res, next) {
 	if (req.body) {
 		var charCollection = mongoDBDatabase.collection('characterData');
 		var newChar = {
-			"name": req.body.name,
-			"race": req.body.race,
-			"class": req.body.class,
-			"str": req.body.str,
-			"dex": req.body.dex,
-			"con": req.body.con,
-			"int": req.body.int,
-			"wis": req.body.wis,
-			"cha": req.body.cha
+			name: req.body.name,
+			race: req.body.race,
+			classtype: req.body.classtype,
+			strength: req.body.strength,
+			dexterity: req.body.dexterity,
+			consitution: req.body.constitution,
+			intelegence: req.body.inelegence,
+			wisdom: req.body.wisdom,
+			charisma: req.body.charisma,
 		};
 
 		charCollection.updateOne(
