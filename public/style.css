@@ -320,3 +320,149 @@ aside h2{
     display: flex;
     flex-direction: column;
 }
+
+/*
+* Character sheet css all below here
+ */
+
+.character-sheet {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    background-image: url("./images/roster-background.jpeg");
+    height: 1100px;
+    width: 1500px;
+    margin: 10px;
+}
+
+.character-sheet-body {
+    display: flex;
+    flex-direction: row;
+    /* border: 1px solid black; */
+    height: 1000px;
+    width: 1500px;
+}
+
+.character-header {
+    display: flex;
+    height: 10px;
+    min-height: 70px;
+    width: 1500px;
+    max-height: 10vh;
+    /* border: 1px solid black; */
+}
+
+#character-name {
+    padding-left: 20px;
+}
+
+.header-span {
+    padding: 20px;
+}
+
+.header-text-input {
+    margin-top: 15px;
+    width: 100px;
+    height: 20px;
+}
+
+.side-block {
+    display: flex;
+    width: 500px;
+    flex-direction: column;
+    height:200px
+    padding: 10px;
+}
+
+.stat-title {
+    text-align: center;
+}
+
+.stat-header {
+    text-align: center;
+}
+
+.stat-name {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+}
+
+/* .input-squares { */
+/*     display: flex; */
+/*     flex-direction: column; */
+/* } */
+
+.proficiency-text-input {
+    margin-top: 15px;
+    width: 20px;
+    height: 20px;
+}
+
+
+.stat-section {
+    display: flex;
+    flex-direction: row;
+    max-width: 500px;
+    width: 500px;
+}
+
+.stat-labels {
+    padding: 9px;
+}
+
+.modifier-lable {
+    display: flex;
+    flex-direction: column;
+}
+
+.save-lable {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-modifier {
+    display: flex;
+    flex-direction: row;
+    margin-left: 10px;
+    /* margin-right: 10px; */
+}
+
+/* .modifier{ */
+/*     display: inline; */
+/*     margin: 10px; */
+/* } */
+
+
+.modifier-text-input {
+    max-width: 20px;
+    display: inline;
+    margin: 5px;
+}
+
+
+.stat-text-input {
+    max-width: 20px;
+    display: inline;
+    margin: 5px;
+}
+
+
+.main-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-top {
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+.journal-section {
+    text-align: center;
+    width: 976px;
+    height: 450px;
+    /* border: 1px solid black; */
+}
