@@ -1,0 +1,15 @@
+        <aside class="character-roster">
+            <h2>Characters</h2>
+
+            <div class="side-content">
+
+                <div id="character-button-container">
+                    {{#each characterData}}
+                    {{>newCharacterButton}}
+                    {{/each}}
+                </div>
+
+                <button id="new-character-button" class="action-button">New Character</button>
+
+            </div>
+        </aside>

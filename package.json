@@ -1,0 +1,28 @@
+{
+    "name": "the_archives",
+    "version": "1.0.0",
+    "description": "One stop data base for avid tabletop gamers.",
+    "main": "server.js",
+    "dependencies": {
+        "express": "^4.16.2",
+        "express-handlebars": "^3.0.0",
+        "handlebars": "^4.0.11"
+    },
+    "devDependencies": {},
+    "scripts": {
+        "test": "echo \\\"Error: no test specified\\\" && exit 1\"",
+        "build": "handlebars views/partials/newCharacterButton.handlebars -f public/newCharacterButtonTemplate.js",
+        "start": "node server.js",
+        "prestart": "npm run build"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/OSU-CS290-F17/final-project-group-19.git"
+    },
+    "author": "Group 19",
+    "license": "UNLICENSED",
+    "bugs": {
+        "url": "https://github.com/OSU-CS290-F17/final-project-group-19/issues"
+    },
+    "homepage": "https://github.com/OSU-CS290-F17/final-project-group-19#readme"
+}
