@@ -40,6 +40,8 @@ app.get('/:username/:password', function(req, res, next){
     var username = req.params.username;
     var password = req.params.password;
 
+	var charCollection = mongoDBDatabase.collection('characterData');
+
 	charCollection.find({}).toArray(function (err, results) {
 		characterData = results;
 
