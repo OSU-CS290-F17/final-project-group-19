@@ -63,6 +63,41 @@ app.get('*', function (req, res) {
     res.status(404).render('404');
 });
 
+app.post('/:username/:password', function (req, res, next) {
+	if (req.body) {
+		var charCollection = mongoDBDatabase.collection('characterData');
+		var newChar = {
+			"name": req.body.name,
+			"race": req.body.race,
+			"class": req.body.class,
+			"str": req.body.str,
+			"dex": req.body.dex,
+			"con": req.body.con,
+			"int": req.body.int,
+			"wis": req.body.wis,
+			"cha": req.body.cha
+		};
+
+		charCollection.updateOne(
+		
+			{$push: {newChar} },
+			function (err, result) {
+				if (err) {
+					res.status(500).send("Error fetching data");
+				} else {
+					res.status(200).send("Success!");
+				}
+			}
+		);
+	} else {
+		res.status(400).send("Request needs some more info or is broken, I don't know");
+	}
+});
+
+app.post('*', function(req, res) {
+	res.status(404).send("POST to unknown path");
+});
+
 MongoClient.connect(mongoURL, function (err, db) {
 	if (err) {
 		throw err;
