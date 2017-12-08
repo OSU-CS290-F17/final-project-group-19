@@ -66,6 +66,35 @@ function insertNewCharacter(name) {
     characterButtonContainer.insertAdjacentHTML('beforeend', characterButtonHTML);
 }
 
+function insertCharacterSheet (name, classtype, experience, race, strength, dexterity, constitution, intelegence, wisdom, charisma, strengthMod, dexterityMod, constitutionMod, intelegenceMod, wisdomMod, charismaMod, strengthSave, dexteritySave, constitutionSave, intelegenceSave, wisdomSave, charismaSave) {
+    var characterSheetTemplateArgs = {
+        name: name,
+        classtype: classtype,
+        experience: experience,
+        race: race,
+        strength: strength,
+        dexterity: dexterity,
+        constitution: constitution,
+        intelegence: intelegence,
+        charisma: charisma,
+        strengthMod: strengthMod,
+        dexterityMod: dexterityMod,
+        constitutionMod: constitutionMod,
+        intelegenceMod: intelegenceMod,
+        wisdomMod: wisdomMod,
+        charismaMod: charismaMod,
+        strengthSave: strengthSave,
+        dexteritySave: dexteritySave,
+        constitutionSave: constitutionSave,
+        intelegenceSave: intelegenceSave,
+        wisdomSave: wisdomSave,
+        charismaSave: charismaSave
+    };
+
+    var characterSheetHTML = Handlebars.templates.post(characterSheetTemplateArgs);
+    var characterSheetContainer = document.getElementById('characterSheetContainer');
+    postContainer.insertAdjacentHTML('beforeend', characterSheetHTML);
+}
 
 //Display the new character Modal
 function showNewCharacterModal() {
