@@ -79,7 +79,16 @@ function handleNewCharacter(characterName) {
     postRequest.open('POST', postURL);
 
     var  newCharacter= {
-        name: characterName
+        name: characterName,
+        classtype: "",
+        experience: "",
+        race: "",
+        strength: "",
+        dexterity: "",
+        constitution: "",
+        intelegence: "",
+        wisdom: "",
+        charisma: ""
     };
     var requestBody = JSON.stringify(newCharacter);
     postRequest.setRequestHeader('Content-Type', 'application/json');

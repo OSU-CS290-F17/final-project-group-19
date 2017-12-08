@@ -12,6 +12,7 @@ var mongoUser = 'cs290_okonekp';//process.env.MONGO_USER;
 var mongoPassword = 'cs290_okonekp';//process.env.MONGO_PASSWORD;
 var mongoDBName = 'cs290_okonekp';//process.env.MONGO_DB;
 
+var mongoDBDatabase = null;
 var mongoURL = 'mongodb://'+mongoUser+':'+mongoPassword+'@'+mongoHost+':'+mongoPort+'/'+mongoDBName;
 
 var app = express();
@@ -69,18 +70,19 @@ app.post('/:username/:password', function (req, res, next) {
 		var newChar = {
 			"name": req.body.name,
 			"race": req.body.race,
-			"class": req.body.class,
-			"str": req.body.str,
-			"dex": req.body.dex,
-			"con": req.body.con,
-			"int": req.body.int,
-			"wis": req.body.wis,
-			"cha": req.body.cha
+			"classtype": req.body.classtype,
+			"strength": req.body.strength,
+			"dexterity": req.body.dexterity,
+			"consitution": req.body.constitution,
+			"intelegence": req.body.intelegence,
+			"wisdom": req.body.wisdom,
+			"charisma": req.body.charisma,
 		};
 
+		if (0) {
 		charCollection.updateOne(
 		
-			{$push: {newChar} },
+			{$push: newChar },
 			function (err, result) {
 				if (err) {
 					res.status(500).send("Error fetching data");
@@ -89,6 +91,11 @@ app.post('/:username/:password', function (req, res, next) {
 				}
 			}
 		);
+		}
+		else {
+			charCollection.insert(newChar);
+			res.status(200).send("Success!");
+		}
 	} else {
 		res.status(400).send("Request needs some more info or is broken, I don't know");
 	}
