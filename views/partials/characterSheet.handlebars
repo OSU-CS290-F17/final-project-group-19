@@ -1,102 +1,98 @@
 <main class="content">
-    <div class="character-sheet-container">
-
-        <div class="character-sheet">
-            <div class="character-header">
-                <h3 id="character-name">{{name}}</h3>
-                <span class="header-span">Class</span>
-                <input id="class-name" type="text" class="header-text-input" value="{{class}}"></input>
-                <span class="header-span">Experience</span>
-                <input id="experience" type="text" class="header-text-input" value="{{experience}}"></input>
-                <span class="header-span">Race</span>
-                <input id="race" type="text" class="header-text-input" value="{{race}}"></input>
-                <span class="header-span">Proficiency Bonus</span>
-                <input id="proficiency" type="text" class="proficiency-text-input"></input>
-            </div>
-
-            <div class="character-sheet-body">
-
-                <!-- ====================================================================================== -->
-                <div class="side-block">
-                    <div class="stat-title">
-                        <cen>
-                            <h3 class="stat-header">
-                                Stats
-                            </h3>
-                        </cen>
-                    </div>
-                    <div class="stat-section">
-                        <div class="stat-name">
-                            <div class="stat-labels" ><label for="stat-text-input">Strength</label></div>
-                            <div class="stat-labels" ><label for="stat-text-input">Dexterity</label></div>
-                            <div class="stat-labels" ><label for="stat-text-input">Constitution</label></div>
-                            <div class="stat-labels" ><label for="stat-text-input">Inteligence</label></div>
-                            <div class="stat-labels" ><label for="stat-text-input">Wisdom</label></div>
-                            <div class="stat-labels" ><label for="stat-text-input">Charisma</label></div>
-                        </div>
-
-                        <div class="input-squares">
-                            <input id="str" type="text" class="stat-text-input" value="{{strength}}"></input>
-                            <input id="dex" type="text" class="stat-text-input" value="{{dexterity}}"></input>
-                            <input id="con" type="text" class="stat-text-input" value="{{constitution}}"></input>
-                            <input id="int" type="text" class="stat-text-input" value="{{inteligence}}"></input>
-                            <input id="wis" type="text" class="stat-text-input" value="{{wisdom}}"></input>
-                            <input id="cha" type="text" class="stat-text-input" value="{{charisma}}"></input>
-                        </div>
-
-                        <div class="modifier-lable">
-                            <div class="stat-labels" ><label for="stat-text-input">Modifier</label></div>
-                            <div class="stat-labels" ><label for="stat-text-input">Modifier</label></div>
-                            <div class="stat-labels" ><label for="stat-text-input">Modifier</label></div>
-                            <div class="stat-labels" ><label for="stat-text-input">Modifier</label></div>
-                            <div class="stat-labels" ><label for="stat-text-input">Modifier</label></div>
-                            <div class="stat-labels" ><label for="stat-text-input">Modifier</label></div>
-                        </div>
-
-                        <div class="input-squares">
-                            <input id="str-mod" type="text" class="modifier-text-input" value="{{strengthMod}}"></input>
-                            <input id="dex-mod" type="text" class="modifier-text-input" value="{{dexterityMod}}"></input>
-                            <input id="con-mod" type="text" class="modifier-text-input" value="{{constitutionMod}}"></input>
-                            <input id="int-mod" type="text" class="modifier-text-input" value="{{inteligenceMod}}"></input>
-                            <input id="wis-mod" type="text" class="modifier-text-input" value="{{wisdomMod}}"></input>
-                            <input id="cha-mod" type="text" class="modifier-text-input" value="{{charismaMod}}"></input>
-                        </div>
-
-                        <div class="save-lable">
-                            <div class="stat-labels" ><label for="stat-text-input">Save</label></div>
-                            <div class="stat-labels" ><label for="stat-text-input">Save</label></div>
-                            <div class="stat-labels" ><label for="stat-text-input">Save</label></div>
-                            <div class="stat-labels" ><label for="stat-text-input">Save</label></div>
-                            <div class="stat-labels" ><label for="stat-text-input">Save</label></div>
-                            <div class="stat-labels" ><label for="stat-text-input">Save</label></div>
-                        </div>
-
-                        <div class="input-squares">
-                            <input id="str-save" type="text" class="stat-text-input"value="{{strengthSave}}"></input>
-                            <input id="dex-save" type="text" class="stat-text-input"value="{{dexteritySave}}"></input>
-                            <input id="con-save" type="text" class="stat-text-input"value="{{constitutionSave}}"></input>
-                            <input id="int-save" type="text" class="stat-text-input"value="{{inteligenceSave}}"></input>
-                            <input id="wis-save" type="text" class="stat-text-input"value="{{wisdomSave}}"></input>
-                            <input id="cha-save" type="text" class="stat-text-input"value="{{charismaSave}}"></input>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="main-section">
-                </div>
-                <div class="main-bottom">
-                    <div class="journal-section">
-                        <h3 class="journal-title">
-                            Journal
-                        </h3>
-                        <textarea rows="25" cols="120"></textarea>
-                    </div>
-                </div>
-            </div>
-            <div class="save-character">
-	              <button type="button" id="save-accept" class="action-button">Save</button>
-            </div>
+    <div class="character-sheet">
+        <div class="character-header">
+            <h3 id="character-name">{{name}}</h3>
+            <span class="header-span">Class</span>
+            <input id="class-name" type="text" class="header-text-input" value="{{class}}"></input>
+            <span class="header-span">Experience</span>
+            <input id="experience" type="text" class="header-text-input" value="{{experience}}"></input>
+            <span class="header-span">Race</span>
+            <input id="race" type="text" class="header-text-input" value="{{race}}"></input>
+            <span class="header-span">Proficiency Bonus</span>
+            <input id="proficiency" type="text" class="proficiency-text-input"></input>
         </div>
 
+        <div class="character-sheet-body">
+
+            <!-- ====================================================================================== -->
+            <div class="side-block">
+                <div class="stat-title">
+                    <cen>
+                        <h3 class="stat-header">
+                            Stats
+                        </h3>
+                    </cen>
+                </div>
+                <div class="stat-section">
+                    <div class="stat-name">
+                        <div class="stat-labels" ><label for="stat-text-input">Strength</label></div>
+                        <div class="stat-labels" ><label for="stat-text-input">Dexterity</label></div>
+                        <div class="stat-labels" ><label for="stat-text-input">Constitution</label></div>
+                        <div class="stat-labels" ><label for="stat-text-input">Inteligence</label></div>
+                        <div class="stat-labels" ><label for="stat-text-input">Wisdom</label></div>
+                        <div class="stat-labels" ><label for="stat-text-input">Charisma</label></div>
+                    </div>
+
+                    <div class="input-squares">
+                        <input id="str" type="text" class="stat-text-input" value="{{strength}}"></input>
+                        <input id="dex" type="text" class="stat-text-input" value="{{dexterity}}"></input>
+                        <input id="con" type="text" class="stat-text-input" value="{{constitution}}"></input>
+                        <input id="int" type="text" class="stat-text-input" value="{{inteligence}}"></input>
+                        <input id="wis" type="text" class="stat-text-input" value="{{wisdom}}"></input>
+                        <input id="cha" type="text" class="stat-text-input" value="{{charisma}}"></input>
+                    </div>
+
+                    <div class="modifier-lable">
+                        <div class="stat-labels" ><label for="stat-text-input">Modifier</label></div>
+                        <div class="stat-labels" ><label for="stat-text-input">Modifier</label></div>
+                        <div class="stat-labels" ><label for="stat-text-input">Modifier</label></div>
+                        <div class="stat-labels" ><label for="stat-text-input">Modifier</label></div>
+                        <div class="stat-labels" ><label for="stat-text-input">Modifier</label></div>
+                        <div class="stat-labels" ><label for="stat-text-input">Modifier</label></div>
+                    </div>
+
+                    <div class="input-squares">
+                        <input id="str-mod" type="text" class="modifier-text-input" value="{{strengthMod}}"></input>
+                        <input id="dex-mod" type="text" class="modifier-text-input" value="{{dexterityMod}}"></input>
+                        <input id="con-mod" type="text" class="modifier-text-input" value="{{constitutionMod}}"></input>
+                        <input id="int-mod" type="text" class="modifier-text-input" value="{{inteligenceMod}}"></input>
+                        <input id="wis-mod" type="text" class="modifier-text-input" value="{{wisdomMod}}"></input>
+                        <input id="cha-mod" type="text" class="modifier-text-input" value="{{charismaMod}}"></input>
+                    </div>
+
+                    <div class="save-lable">
+                        <div class="stat-labels" ><label for="stat-text-input">Save</label></div>
+                        <div class="stat-labels" ><label for="stat-text-input">Save</label></div>
+                        <div class="stat-labels" ><label for="stat-text-input">Save</label></div>
+                        <div class="stat-labels" ><label for="stat-text-input">Save</label></div>
+                        <div class="stat-labels" ><label for="stat-text-input">Save</label></div>
+                        <div class="stat-labels" ><label for="stat-text-input">Save</label></div>
+                    </div>
+
+                    <div class="input-squares">
+                        <input id="str-save" type="text" class="stat-text-input"value="{{strengthSave}}"></input>
+                        <input id="dex-save" type="text" class="stat-text-input"value="{{dexteritySave}}"></input>
+                        <input id="con-save" type="text" class="stat-text-input"value="{{constitutionSave}}"></input>
+                        <input id="int-save" type="text" class="stat-text-input"value="{{inteligenceSave}}"></input>
+                        <input id="wis-save" type="text" class="stat-text-input"value="{{wisdomSave}}"></input>
+                        <input id="cha-save" type="text" class="stat-text-input"value="{{charismaSave}}"></input>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-section">
+            </div>
+            <div class="main-bottom">
+                <div class="journal-section">
+                    <h3 class="journal-title">
+                        Journal
+                    </h3>
+                    <textarea rows="25" cols="120"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="save-character">
+	          <button type="button" id="save-accept" class="action-button">Save</button>
+        </div>
     </div>
 </main>
