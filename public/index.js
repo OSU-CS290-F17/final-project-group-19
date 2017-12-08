@@ -126,6 +126,11 @@ function insertCharacterSheet (name, classtype, experience, race, strength, dext
     postContainer.insertAdjacentHTML('beforeend', characterSheetHTML);
 }
 
+function removeCharacterSheet() {
+    var characterContainer = document.getElementById('character-container');
+    characterContainer.removeChild('character-sheet');
+}
+
 function getCharacterInfo () {
 
 }
