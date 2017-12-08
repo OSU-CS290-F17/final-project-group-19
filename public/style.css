@@ -171,7 +171,7 @@ button {
 	  right: 72px;
 }
 
-.modal-footer {
+#login-modal-footer {
 	  position: absolute;
 	  bottom: 24px;
 	  display: flex;
@@ -224,7 +224,7 @@ button {
     border: 1px solid #ababab;
 }
 
-.modal-footer {
+#char-modal-footer {
     display: flex;
     justify-content: flex-end;
     padding: 10px 10px 20px 10px;
@@ -303,7 +303,7 @@ button {
 }
 
 aside h2{
-    color: light-grey;
+    color: white;
 }
 
 .side-content{
