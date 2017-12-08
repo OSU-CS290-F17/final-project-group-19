@@ -476,3 +476,11 @@ aside h2{
     height: 450px;
     /* border: 1px solid black; */
 }
+
+.save-character {
+    
+}
+
+#save-button {
+    width: 100;
+}
