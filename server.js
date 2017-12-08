@@ -5,6 +5,16 @@ var exphbs = require('express-handlebars');
 var path = require('path');
 var fs = require('fs');
 
+//Mongo DB specific things
+var MongoClient = require('mongodb').MongoClient;
+var mongoHost = 'classmongo.engr.oregonstate.edu/';//process.env.MONGO_HOST;
+var mongoPort = process.env.MONGO_PORT || 27017;
+var mongoUser = 'CS290_okonekp;'//process.env.MONGO_USER;
+var mongoPassword = 'CS290_okonekp';//process.env.MONGO_PASSWORD;
+var mongoDBName = 'CS290_okonekp'//process.env.MONGO_DB;
+
+var mongoURL = 'mongodb://'+mongoUser+':'+mongoPassword+'@'+mongoHost+':'+mongoPort+'/'+mongoDBName;
+
 //Setting up our working environment cont.
 var app = express();
 var port = process.env.PORT || 3000;
@@ -13,6 +23,8 @@ var port = process.env.PORT || 3000;
 var characterData = require('./characterData.json');
 //local .json news data for testing
 var newsData = require('./newsData.json');
+
+var mongoDBDatabase;
 
 app.use(express.static('public'));
 
@@ -35,6 +47,13 @@ app.get('*', function(req, res) {
 	res.status(404).render('404',{loggedIn: 404});
 });
 
-app.listen(port, function () {
-    console.log("== Server listening on port", port);
-});
+MongoClient.connect(mongoURL, function (err, db) {
+	if (err) {
+		throw err;
+	}
+	mongoDBDatabase = db;
+	
+	app.listen(port, function () {
+	    console.log("== Server listening on port", port);
+	});
+}
