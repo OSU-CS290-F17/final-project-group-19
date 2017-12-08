@@ -173,7 +173,7 @@ function getCharacterInfo () {
 }
 
 function saveCharacter (){
-
+    
 }
 
 //Display the new character Modal
@@ -219,4 +219,37 @@ newCharacterAcceptButton.addEventListener('click', function() {
         hideNewCharacterModal();
     }
 });
+// ************************Get This Working********************************
+// var saveCharacterButton = document.getElementById('save-accept');
+// saveCharacterButton.addEventListener('click', function() {
+//     var characterInfo; 
+//     function getCharacterInfo () {
+//         characterInfo = {
+//             name: document.getElementById('character-name'),
+//             classtype: document.getElementById('class-name').value,
+//             experience: document.getElementById('experience').value,
+//             race: document.getElementById('race').value,
+//             strength: document.getElementById('str').value,
+//             dexterity: document.getElementById('dex').value,
+//             constitution: document.getElementById('con').value,
+//             intelegence: document.getElementById('int').value,
+//             charisma: document.getElementById('cha').value,
+//             strengthMod: document.getElementById('str-mod').value,
+//             dexterityMod: document.getElementById('dex-mod').value,
+//             constitutionMod: document.getElementById('con-mod').value,
+//             intelegenceMod: document.getElementById('int-mod').value,
+//             wisdomMod: document.getElementById('wis-mod').value,
+//             charismaMod: document.getElementById('cha-mod').value,
+//             strengthSave: document.getElementById('str-save').value,
+//             dexteritySave: document.getElementById('dex-save').value,
+//             constitutionSave: document.getElementById('con-save').value,
+//             intelegenceSave: document.getElementById('int-save').value,
+//             wisdomSave: document.getElementById('wis-save').value,
+//             charismaSave: document.getElementById('cha-save').value
+//         };
+//     }
+//     getCharacterInfo();
+//     saveCharacter(characterInfo);
+// });
+
 //*****************End of character roster stuff********************
