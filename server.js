@@ -16,7 +16,7 @@ var mongoURL = 'mongodb://'+mongoUser+':'+mongoPassword+'@'+mongoHost+':'+mongoP
 
 var app = express();
 var port = process.env.PORT || 3000;
-var characterData = require('./characterData.json');
+var characterData;
 var userData = require('./userData.json');
 
 app.use(express.static('public'));
@@ -39,14 +39,35 @@ app.get('/', function(req, res, next){
 app.get('/:username/:password', function(req, res, next){
     var username = req.params.username;
     var password = req.params.password;
-    if(userData.name === username && userData.password === password){
-		    res.status(200).render('accountpage', {
-            characterData: characterData
-        });
+    var charCollection = mongoDBDatabase.collection('characterData');
+	var userCollection = mongoDBDatabase.collection('userData');
+	var usernameC = 0;
+	var passwordC = 0;
+
+	userCollection.find({}).toArray(function (err, results) {
+		if (results[0].username === username) {
+			usernameC = 1;
+		}
+		if (results[0].password === password) {
+			passwordC = 1;
+		}
+	});
+
+	charCollection.find({}).toArray(function (err, results) {
+		characterData = results;
+
+
+		
+		if(userData.name === username && userData.password === password){
+			    res.status(200).render('accountpage', {
+			    characterData: characterData,
+				loggedIn: 1
+			});
     }
     else {
         next();
     }
+	});
 });
 
 app.get('*', function (req, res) {
